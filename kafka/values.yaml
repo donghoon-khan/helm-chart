@@ -1109,3 +1109,15 @@ externalZookeeper:
 ## Extra init containers to add to the deployment
 ##
 initContainers: []
+
+kafdrop:
+  enabled: true
+  kafka:
+    brokerConnect: localhost:9092
+    properties: ""
+    truststore: ""
+    keystore: ""
+    propertiesFile: "kafka.properties"
+    truststoreFile: "kafka.truststore.jks"
+    keystoreFile: "kafka.keystore.jks"
+

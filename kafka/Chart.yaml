@@ -8,24 +8,26 @@ dependencies:
   tags:
   - bitnami-common
   version: 1.x.x
-- condition: zookeeper.enabled
-  name: zookeeper
+- name: zookeeper
+  condition: zookeeper.enabled
   repository: https://charts.bitnami.com/bitnami
   version: 6.x.x
+- name: kafdrop
+  condition: kafdrop
 description: Apache Kafka is a distributed streaming platform.
-home: https://github.com/bitnami/charts/tree/master/bitnami/kafka
-icon: https://bitnami.com/assets/stacks/kafka/img/kafka-stack-220x234.png
 keywords:
 - kafka
+- kafdrop
 - zookeeper
 - streaming
 - producer
 - consumer
 maintainers:
-- email: containers@bitnami.com
-  name: Bitnami
+- email: mustwin@kakao.com
+  name: donghoon-khan
 name: kafka
 sources:
 - https://github.com/bitnami/bitnami-docker-kafka
+- https://github.com/donghoon-khan/helm-charts
 - https://kafka.apache.org/
 version: 12.9.5
