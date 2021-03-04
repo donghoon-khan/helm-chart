@@ -13,7 +13,7 @@ dependencies:
   repository: https://charts.bitnami.com/bitnami
   version: 6.x.x
 - name: kafdrop
-  condition: kafdrop
+  condition: kafdrop.enabled
 description: Apache Kafka is a distributed streaming platform.
 keywords:
 - kafka
