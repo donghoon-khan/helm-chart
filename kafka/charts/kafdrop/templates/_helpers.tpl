@@ -36,7 +36,7 @@ Common labels
 */}}
 {{- define "kafdrop.labels" -}}
 app.kubernetes.io/name: {{include "kafdrop.name" .}}
-helm.sh/chart: {{ include "kafdrop.chart" .}}i
+helm.sh/chart: {{ include "kafdrop.chart" .}}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
