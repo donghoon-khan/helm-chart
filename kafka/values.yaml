@@ -1113,11 +1113,27 @@ initContainers: []
 kafdrop:
   enabled: true
   kafka:
-    brokerConnect: localhost:9092
+    brokerConnect: kafka.namespace.svc.cluster.local:9092
     properties: ""
     truststore: ""
     keystore: ""
     propertiesFile: "kafka.properties"
     truststoreFile: "kafka.truststore.jks"
     keystoreFile: "kafka.keystore.jks"
+  server:
+    port: 9000
+    servlet:
+      contextPath: /kafdrop
+  service:
+    type: ClusterIP
+    port: 9000 
+  ingress:
+    enabled: false
+    certManager: false
+    annotations:
+      kubernetes.io/ingress.class: "nginx"
+      kubernetes.io/ingress.allow-http: "true"
+      nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
+      nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    hosts: []
 
